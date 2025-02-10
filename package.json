@@ -1,0 +1,27 @@
+{
+  "name": "brainsync",
+  "version": "1.0.0",
+  "description": "second brain app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pshri5/brainSync.git"
+  },
+  "author": "Preetam Shri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pshri5/brainSync/issues"
+  },
+  "homepage": "https://github.com/pshri5/brainSync#readme",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8"
+  }
+}
