@@ -15,6 +15,7 @@ const registerUser = asyncHandler(async(req,res)=>{
     if (existingUser) {
         throw new Error("Username already exists")
     }
+    
     const user = await User.create({
         username,
         password // add hashed password
@@ -24,6 +25,23 @@ const registerUser = asyncHandler(async(req,res)=>{
         message:"User signed up successfully"
     })
 })
+// sign in user
+const loginUser = asyncHandler(async(req,res)=>{
 
+const {username,password} = req.body
+if (!username && !password) {
+    throw new Error("All fields are mandatory")
+}
 
-export {registerUser}
+const user = await User.findOne({
+    $or: [{username},{password}]
+})
+if (!user) {
+    throw new Error("User does not exist")
+}
+})
+export {
+    registerUser,
+    loginUser,
+
+}
