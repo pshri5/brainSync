@@ -29,3 +29,5 @@ const contentSchema = new Schema({
         required: true
     }
 },{timestamps:true})
+
+export const Content = mongoose.model("Content",contentSchema)
