@@ -15,7 +15,7 @@ app.use(express.json({limit:"16kb"}))
 app.use(cookieParser())
 
 //import routes
-import userRouter from "./routes/user.routes"
+import userRouter from "./backend/routes/user.routes"
 
 //routes
 app.use("/api/v1/user",userRouter)

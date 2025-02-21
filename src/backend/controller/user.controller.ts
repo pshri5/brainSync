@@ -39,6 +39,10 @@ const user = await User.findOne({
 if (!user) {
     throw new Error("User does not exist")
 }
+res.status(200).json({
+    success:true,
+    message:"User logged in successfully"
+})
 })
 export {
     registerUser,
