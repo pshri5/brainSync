@@ -1,8 +1,9 @@
 import { Content } from "../model/content.model";
 import { asyncHandler } from "../utils/asyncHandler";
+import type { Request, Response } from "express";
 
 //create content
-const createContent = asyncHandler(async(req,res)=>{
+const createContent = asyncHandler(async(req:Request,res:Response)=>{
     const {content} = req.body
     if (!content) {
         throw new Error("Content is required")
@@ -18,7 +19,7 @@ const createContent = asyncHandler(async(req,res)=>{
     })
 })
 //read content
-const readContent = asyncHandler(async(req,res)=>{
+const readContent = asyncHandler(async(req:Request,res: Response)=>{
     const {contentID} = req.params
     const getcontent = await Content.findOne({
         _id:contentID,
@@ -30,7 +31,7 @@ const readContent = asyncHandler(async(req,res)=>{
     })
 })
 //update content
-const updateContent = asyncHandler(async(req,res)=>{
+const updateContent = asyncHandler(async(req:Request,res:Response)=>{
     const {contentID} = req.params
     const {content} = req.body
     const newContent = await Content.findOneAndUpdate({
@@ -52,7 +53,7 @@ const updateContent = asyncHandler(async(req,res)=>{
     })
 })
 //delete content
-const deleteContent = asyncHandler(async(req,res)=>{
+const deleteContent = asyncHandler(async(req:Request,res:Response)=>{
     const {contentID} = req.params
     const delContent = await Content.findByIdAndDelete({
         _id: contentID,

@@ -1,8 +1,9 @@
 import { User } from "../model/user.model"
 import { asyncHandler } from "../utils/asyncHandler"
+import type { Request, Response } from "express"
 
 // register user
-const registerUser = asyncHandler(async(req,res)=>{
+const registerUser = asyncHandler(async(req:Request,res:Response)=>{
     const {username,password} = req.body
     //validating
     if (
@@ -26,7 +27,7 @@ const registerUser = asyncHandler(async(req,res)=>{
     })
 })
 // sign in user
-const loginUser = asyncHandler(async(req,res)=>{
+const loginUser = asyncHandler(async(req:Request,res:Response)=>{
 
 const {username,password} = req.body
 if (!username && !password) {
